@@ -7,10 +7,10 @@ namespace Bibliotek
     class Book
     {
 
-        public String title;
-        public String author;
-        public DateTime timeBorrowed;
-        public DateTime timeReturn;
+        private String title;
+        private String author;
+        private DateTime timeBorrowed;
+        private DateTime timeReturn;
 
         public Book(string title, string author, DateTime timeBorrowed)
         {
@@ -21,9 +21,29 @@ namespace Bibliotek
             timeReturn = timeBorrowed.AddDays(14.0);
         }
 
-        public void setTimeReturn(DateTime newDateTime)
+        public void SetTimeReturn(DateTime newDateTime)
         {
             this.timeReturn = newDateTime;
+        }
+
+        public DateTime GetTimeReturn()
+        {
+            return timeReturn;
+        }
+
+        public DateTime GetTimeBorrowed()
+        {
+            return timeBorrowed;
+        }
+
+        public string GetAuthor()
+        {
+            return author;
+        }
+
+        public string GetTitle()
+        {
+            return title;
         }
 
 

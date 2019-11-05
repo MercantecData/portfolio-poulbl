@@ -6,10 +6,7 @@ namespace Bibliotek
 {
     class Library
     {
-
         public List<Book> ListOfBooks;
-
-
 
         public Library()
         {
@@ -22,26 +19,38 @@ namespace Bibliotek
             ListOfBooks.Add(new Book("Poul er ikke smuk 3", "Dumrian, Spade", new DateTime(2019, 4, 11)));
         }
 
-        public Book BorrowBook(string Title)
+        public Book BorrowBook(string title)
         {
             for (int i = 0; i < ListOfBooks.Count; i++)
             {
-                if (ListOfBooks[i].title.ToLower() == Title.ToLower().Trim())
+                if (ListOfBooks[i].GetTitle().ToLower() == title.ToLower().Trim())
                 {
                     Book bookToBorrow = ListOfBooks[i];
                     ListOfBooks.RemoveAt(i);
                     return bookToBorrow;
                 }
             }
+            Console.WriteLine("Book not found.");
             return null;
         }
+        public Book BorrowBook(int index)
+        {
+            if (index >= 0 && index < ListOfBooks.Count)
+            {
+                Book bookToBorrow = ListOfBooks[index];
+                ListOfBooks.RemoveAt(index);
+                return bookToBorrow;
+            }
 
+            else
+            {
+                Console.WriteLine("Book not found.");
+                return null;
+            }
+        }
         public void ReturnBook(Book book)
         {
             ListOfBooks.Add(book);
         }
-
-
-
     }
 }
