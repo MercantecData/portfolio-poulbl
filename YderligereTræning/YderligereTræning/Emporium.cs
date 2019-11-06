@@ -12,6 +12,8 @@ namespace YderligereTræning
         public Emporium()
         {
         }
+        
+
 
         public int ReturnBikeAmountFromColor(Color color)
         {

@@ -13,17 +13,24 @@ namespace YderligereTræning
         private double wheelSize;
         private Color color;
         private double price;
+        private BikeShop owningStore;
 
-        public Bicycle(string brand, double wheelSize, double price, Color color)
+        public Bicycle(string brand, double wheelSize, double price, Color color, BikeShop owningStore)
         {
             this.brand = brand;
             this.wheelSize = wheelSize;
             this.price = price;
             this.color = color;
+            this.owningStore = owningStore;
         }
         public double GetWheelSize()
         {
             return wheelSize;
+        }
+
+        public BikeShop GetOwningStore()
+        {
+            return owningStore;
         }
 
         public Color GetColor()
@@ -31,9 +38,14 @@ namespace YderligereTræning
             return color;
         }
 
-        public void PrintBikeInformation()
+        public double GetPrice()
         {
-            Console.WriteLine("Brand: " + brand + " - WheelSize: " + wheelSize + " - Price: " + price + " - Color: " + color.ToString());
+            return price;
+        }
+
+        public void PrintBikeInformation(int index)
+        {
+            Console.WriteLine("Index: " + index + " - Brand: " + brand + " - WheelSize: " + wheelSize + " - Price: " + price + " - Color: " + color.ToString());
         }
 
         public string GetBrand()

@@ -51,8 +51,6 @@ namespace YderligereTræning
             return bikesToReturn;
         }
 
-
-
         public List<string> GetAllBrands()
         {
             List<string> brands = new List<string>();
@@ -62,13 +60,24 @@ namespace YderligereTræning
                 {
                     brands.Add(bike.GetBrand());
                 }
-                else
-                {
-                    // her skal der ikke være noget
-                }
-
             }
             return brands;
+        }
+
+
+        public bool SellBike(Bicycle bike, Person buyer)
+        {
+            bikeList.Remove(bike);
+            if (buyer.GetMoney() >= bike.GetPrice())
+            {
+                buyer.SubtractMoney(bike.GetPrice());
+                bikeList.Remove(bike);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public List<Bicycle> GetAllBicyclesOfBrand(string brand)
@@ -79,7 +88,6 @@ namespace YderligereTræning
                 if(brand.ToLower().Trim() == bikeList[i].GetBrand().ToLower().Trim())
                 {
                     brandList.Add(bikeList[i]);
-                    bikeList[i].PrintBikeInformation();
                 }
             }
             if (brandList.Count > 0)
