@@ -8,8 +8,6 @@ namespace Bibliotek
         {
             Library Lib = new Library();
 
-
-
             Console.WriteLine("\n\n Oprindelig list");
             for (int i = 0; i < Lib.ListOfBooks.Count; i++)
             {
