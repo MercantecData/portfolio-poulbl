@@ -6,7 +6,7 @@ namespace YderligereTræning
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
