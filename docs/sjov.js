@@ -5,39 +5,86 @@ function testKlik()
     document.getElementById("testKnap").innerHTML = "Paragraph changed.";
 }
 
+function sleep(seconds)
+{
+  var e = new Date().getTime() + (seconds * 1000);
+  while (new Date().getTime() <= e) {}
+}
 
 function funkTion()
 {
+  document.getElementById("body").style.background = getRandomColor();
+  document.getElementById("main-nav").style.background = getRandomColor();
+  document.getElementById("header1").style.color = getRandomColor();
+  document.getElementById("p1").style.color = getRandomColor();
+  document.getElementById("p2").style.color = getRandomColor();
+  document.getElementById("p3").style.color = getRandomColor();
+  document.getElementById("p4").style.color = getRandomColor();
+  document.getElementById("h2").style.color = getRandomColor();
+  document.getElementById("h3").style.color = getRandomColor();
+  document.getElementById("ul").style.color = getRandomColor();
+
+
+    console.log(body.style.background);
+    var millisecondsToWait = 5000;
+    setTimeout(function() {
+      funkTion();
+    }, millisecondsToWait);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getRandomColor()
+{
   let rand = Math.random();
+  {
   if(rand > 0.9)
   {
-    document.getElementById("body").style.background = 'red';
+    return 'red';
   }
   else if (rand > 0.8) {
-    document.getElementById("body").style.background = 'blue';
+    return 'blue';
   }
   else if (rand > 0.7) {
-    document.getElementById("body").style.background = 'pink';
+    return 'pink';
   }
   else if (rand > 0.6) {
-    document.getElementById("body").style.background = 'cyan';
+    return 'cyan';
   }
   else if (rand > 0.5) {
-    document.getElementById("body").style.background = 'yellow';
+    return 'yellow';
   }
   else if (rand > 0.4) {
-    document.getElementById("body").style.background = 'green';
+   return 'green';
   }
   else if (rand > 0.3) {
-    document.getElementById("body").style.background = 'orange';
+    return 'orange';
   }
   else if (rand > 0.2) {
-    document.getElementById("body").style.background = 'purple';
+    return 'purple';
   }
   else if (rand > 0.1) {
-    document.getElementById("body").style.background = '#6B6A6A';
+    return '#6B6A6A';
   }
-  else if (rand > 0.0) {
-    document.getElementById("body").style.background = '#FFFFFFF';
+  else  {
+    return '#FFFFFFF';
   }
+}
 }
