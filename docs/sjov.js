@@ -13,26 +13,30 @@ function sleep(seconds)
 
 function funkTion()
 {
-  document.getElementById("body").style.background = getRandomColor();
-  document.getElementById("main-nav").style.background = getRandomColor();
+  document.getElementById("body").style.background = randomColor();
+  document.getElementById("main-nav").style.background = randomColor();
   document.getElementById("header1").style.color = getRandomColor();
-  document.getElementById("p1").style.color = getRandomColor();
-  document.getElementById("p2").style.color = getRandomColor();
-  document.getElementById("p3").style.color = getRandomColor();
-  document.getElementById("p4").style.color = getRandomColor();
-  document.getElementById("h2").style.color = getRandomColor();
-  document.getElementById("h3").style.color = getRandomColor();
-  document.getElementById("ul").style.color = getRandomColor();
+  document.getElementById("p1").style.color = randomColor();
+  document.getElementById("p2").style.color = randomColor();
+  document.getElementById("p3").style.color = randomColor();
+  document.getElementById("p4").style.color = randomColor();
+  document.getElementById("h2").style.color = randomColor();
+  document.getElementById("h3").style.color = randomColor();
+  document.getElementById("ul").style.color = randomColor();
 
 
     console.log(body.style.background);
-    var millisecondsToWait = 5000;
+    var millisecondsToWait = 500;
     setTimeout(function() {
       funkTion();
     }, millisecondsToWait);
   }
 
+function randomColor()
+{
+  return '#'+(Math.random()*0xFFFFFF<<0).toString(16);
 
+}
 
 
 
