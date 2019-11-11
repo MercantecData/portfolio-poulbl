@@ -1,29 +1,61 @@
 body
 {
-    background-color: darkgray;
+    background-color: #6B6A6A;
+    font-family:"Segoe UI",Arial,sans-serif;
 }
 
 h1
 {
-    color:khaki;
+    color:white;
     font-size: 69px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+    font-family:"Segoe UI",Arial,sans-serif;
+    /*text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;*/
 }
 h2{
-
-    color:aqua;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color:white;
+    font-family:"Segoe UI",Arial,sans-serif;
 }
 p{
-  font-style: italic;
-  font-family: 'Courier New', Courier, monospace;  
 }
 
-p.is
+.img-base
 {
-    color:yellow;
-    font-style: bold;
-    font-family: monospace;
+    min-width: 200px;
+    min-height: 200px;
 
+    max-height: 400px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.img-avatar
+{
+    width: 80px;
+    height: 80px;
+}
+.navbar-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar-li {
+  float: left;
+}
+
+.navbar-li-a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.navbar-li-a:hover {
+  background-color: #111;
 }
