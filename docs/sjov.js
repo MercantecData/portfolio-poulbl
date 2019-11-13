@@ -1,5 +1,5 @@
 
-
+var isRunning = false;
 function testKlik()
 {
     document.getElementById("testKnap").innerHTML = "Paragraph changed.";
@@ -33,14 +33,25 @@ function toggleDude()
     } else {
       img.style.visibility = 'visible';
     }
-    funkTion();
+
+    document.getElementById("testKnap").innerHTML = "GANG I DEN!!!";
+    triggered();
+    funkTion(false);
+}
+
+function getRandomParrot()
+{
+  var path = 'parrots/hd/',
+      imgs = ['partyparrot.gif','fastparrot.gif','evilparrot.gif', 'angelparrot.gif', 'angryparrot.gif', 'beerparrot.gif', 'bikerparrot.gif', 'birthdaypartyparrot.gif', 'bluntparrot.gif', 'bootlegparrot.gif', 'bouncingparrot.gif', 'beretparrot.gif', 'bunnyparrot.gif', 'ceilingparrot.gif', 'chicoparrot.gif'];
+      i = Math.floor(Math.random()*imgs.length);
+      document.getElementById("parrot").src = path+imgs[i];
 }
 
 
-function funkTion()
+function funkTion(shouldRun)
 {
-  document.getElementById("testKnap").innerHTML = "GANG I DEN!!!  ";
-
+ if(shouldRun)
+{
   document.getElementById("body").style.background = randomColor();
   document.getElementById("main-nav").style.background = randomColor();
   document.getElementById("header1").style.color = getRandomColor();
@@ -52,19 +63,39 @@ function funkTion()
   document.getElementById("h2").style.color = randomColor();
   document.getElementById("h3").style.color = randomColor();
   document.getElementById("ul").style.background = randomColor();
-
-
-    console.log(body.style.background);
-    var millisecondsToWait = 1000;
-    setTimeout(function() {
-      funkTion();
+  isRunning = true;
+  var millisecondsToWait = 1000;
+  setTimeout(function() {
+      funkTion(true);
     }, millisecondsToWait);
+    console.log(body.style.background);
+}
+  else {
+    if(!isRunning)
+    {
+      funkTion(true);
+    }
   }
+}
+
+function triggered()
+{
+  var isVisible = document.getElementById("testKnap").innerHTML;
+
+  if(isVisible=="GANG I DEN!!!")
+  {
+    getRandomParrot();
+  }
+  else {
+  }
+
+}
 
 function randomColor()
 {
   return '#'+(Math.random()*0xFFFFFF<<0).toString(16);
 }
+
 
 
 function showSnackbar() {
