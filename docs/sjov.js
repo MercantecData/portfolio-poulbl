@@ -32,7 +32,7 @@ function toggleDude()
     var img = document.getElementById('funkyGIF');
 
     if (img.style.visibility === 'visible') {
-      img.style.visibility = 'hidden';
+    //  img.style.visibility = 'hidden';
     } else {
       img.style.visibility = 'visible';
     }
