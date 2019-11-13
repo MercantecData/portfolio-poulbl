@@ -11,8 +11,36 @@ function sleep(seconds)
   while (new Date().getTime() <= e) {}
 }
 
+function showFeedbackForm()
+{
+  var form = document.getElementById('form');
+  form.style.visibility = 'visible';
+}
+
+function submitFeedbackForm()
+{
+    var form = document.getElementById('form');
+    form.style.visibility = 'hidden';
+    showSnackbar();
+}
+
+function toggleDude()
+{
+    var img = document.getElementById('funkyGIF');
+
+    if (img.style.visibility === 'visible') {
+      img.style.visibility = 'hidden';
+    } else {
+      img.style.visibility = 'visible';
+    }
+    funkTion();
+}
+
+
 function funkTion()
 {
+  document.getElementById("testKnap").innerHTML = "GANG I DEN!!!  ";
+
   document.getElementById("body").style.background = randomColor();
   document.getElementById("main-nav").style.background = randomColor();
   document.getElementById("header1").style.color = getRandomColor();
@@ -39,7 +67,16 @@ function randomColor()
 }
 
 
+function showSnackbar() {
+  // Get the snackbar DIV
+  var snack = document.getElementById("snackbar");
 
+  // Add the "show" class to DIV
+  snack.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function(){ snack.className = snack.className.replace("show", ""); }, 3000);
+}
 
 
 
