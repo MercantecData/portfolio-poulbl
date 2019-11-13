@@ -16,7 +16,45 @@ h2{
     font-family:"Segoe UI",Arial,sans-serif;
 }
 p{
+
 }
+
+.grid
+{
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 9fr;
+  grid-template-rows: 1fr 8fr 1fr;
+  grid-template-areas:
+  "header header"
+  "sidebar main"
+  "sidebar footer";
+}
+
+.main
+{
+  grid-area: main;
+  background-color: grey;
+}
+
+.header
+{
+    grid-area: header;
+    background-color: green;
+}
+
+.footer
+{
+    grid-area: footer;
+    background-color: red;
+}
+
+.sidebar
+{
+    grid-area: sidebar;
+    background-color: black;
+}
+
 
 .img-base
 {
@@ -37,6 +75,7 @@ p{
 }
 .navbar-ul {
   list-style-type: none;
+  height: auto;
   margin: 0;
   padding: 0;
   overflow: hidden;

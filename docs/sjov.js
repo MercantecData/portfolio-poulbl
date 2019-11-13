@@ -20,13 +20,14 @@ function funkTion()
   document.getElementById("p2").style.color = randomColor();
   document.getElementById("p3").style.color = randomColor();
   document.getElementById("p4").style.color = randomColor();
+  document.getElementById("p5").style.color = randomColor();
   document.getElementById("h2").style.color = randomColor();
   document.getElementById("h3").style.color = randomColor();
-  document.getElementById("ul").style.color = randomColor();
+  document.getElementById("ul").style.background = randomColor();
 
 
     console.log(body.style.background);
-    var millisecondsToWait = 500;
+    var millisecondsToWait = 1000;
     setTimeout(function() {
       funkTion();
     }, millisecondsToWait);
@@ -35,7 +36,6 @@ function funkTion()
 function randomColor()
 {
   return '#'+(Math.random()*0xFFFFFF<<0).toString(16);
-
 }
 
 
