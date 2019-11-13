@@ -19,8 +19,11 @@ function showFeedbackForm()
 
 function submitFeedbackForm()
 {
+    var text = document.getElementById('feedbackText').value;
     var form = document.getElementById('form');
+
     form.style.visibility = 'hidden';
+    document.getElementById('feedbackPost').innerHTML = "Din Feedback: "+text;
     showSnackbar();
 }
 
@@ -42,7 +45,9 @@ function toggleDude()
 function getRandomParrot()
 {
   var path = 'parrots/hd/',
-      imgs = ['partyparrot.gif','fastparrot.gif','evilparrot.gif', 'angelparrot.gif', 'angryparrot.gif', 'beerparrot.gif', 'bikerparrot.gif', 'birthdaypartyparrot.gif', 'bluntparrot.gif', 'bootlegparrot.gif', 'bouncingparrot.gif', 'beretparrot.gif', 'bunnyparrot.gif', 'ceilingparrot.gif', 'chicoparrot.gif'];
+      imgs = ['partyparrot.gif','fastparrot.gif','evilparrot.gif', 'angelparrot.gif', 'angryparrot.gif', 'beerparrot.gif', 'bikerparrot.gif', 'birthdaypartyparrot.gif', 'bluntparrot.gif', 'bootlegparrot.gif', 'bouncingparrot.gif', 'beretparrot.gif', 'bunnyparrot.gif', 'ceilingparrot.gif', 'chicoparrot.gif'
+    , 'christmasparrot.gif', 'confusedparrot.gif', 'congaparrot.gif', 'copparrot.gif', 'dadparrot.gif', 'darkmodeparrot.gif', 'dealwithitnowparrot.gif', 'dealwithitparrot.gif', 'discoparrot.gif', 'donutparrot.gif', 'flowerparrot.gif', 'flyingmoneyparrot.gif', 'frenchparrot.gif', 'gentlemanparrot.gif'
+    , 'githubparrot.gif', 'gothparrot.gif'];
       i = Math.floor(Math.random()*imgs.length);
       document.getElementById("parrot").src = path+imgs[i];
 }
