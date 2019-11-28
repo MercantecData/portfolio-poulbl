@@ -1,0 +1,39 @@
+Jeg har lavet følgende tables:
+
+Salaries
+Employee
+Department
+Titles
+
+Disse har jeg lavet fordi vi fik besked på det! Og så også fordi vi laver en lille database til
+en lille virksomhed og disse udgør en basal del af virksomheden.
+
+Udover det har jeg lavet følgende views:
+dep_mans
+dep_employees
+
+Disse har jeg lavet for at kunne se hvem der er managers og hvem der ikke er managers!
+wow
+Jeg har brugt views da det giver god mening at have alle employees i en tabel,
+men der kan også være situationer hvor man skal kunne se specifikke typer af employees.
+
+Selve koden ser sådan her ud.
+
+CREATE VIEW dep_employees AS
+
+SELECT first_name, name
+FROM employee
+INNER JOIN department ON employee.departmentid = department.dep_id
+WHERE employee.title != 2;
+
+Det giver os et view over alle employees indenfor (eller udenfor) et specifikt felt,
+og deres tilknyttet department!
+
+Jeg har også lavet et view der hedder "employee_salaries" hvor man kan se en oversigt over
+alle employees og hvor meget de får udbetalt.
+
+Salaries er sat op til at være titel baseret, så alle managers bliver betalt det samme.
+
+I et ikke optænkt eksempel kunne det være smart at lave en salary individuelt til hver person,
+men for eksperimentes skyld, ville jeg prøve at hive salary igennem titel og ind i employee,
+uden at der er nogen direkte relation mellem employee og salary.
