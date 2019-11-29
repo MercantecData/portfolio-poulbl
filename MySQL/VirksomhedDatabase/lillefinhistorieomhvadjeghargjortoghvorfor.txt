@@ -37,3 +37,18 @@ Salaries er sat op til at være titel baseret, så alle managers bliver betalt det
 I et ikke optænkt eksempel kunne det være smart at lave en salary individuelt til hver person,
 men for eksperimentes skyld, ville jeg prøve at hive salary igennem titel og ind i employee,
 uden at der er nogen direkte relation mellem employee og salary.
+
+
+FREDAG:
+
+Har tilføjet en Stored Procedure til at fyre employees med. Vigtigt.
+
+DELIMITER //
+
+CREATE PROCEDURE fire_employee (IN ID int(11))
+BEGIN
+
+DELETE FROM employee WHERE employee.emp_id=ID;
+END //
+ 
+DELIMITER ;
